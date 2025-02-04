@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/apiin/mis.apiin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/apiin/mis.apiin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/mis.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/mis.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbs_nativeQuery/mis.dbs_nativeQuery.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dbs_nativeQuery/mis.dbs_nativeQuery.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mis.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mis.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maskapi/mis.maskapi.main.iml" filepath="$PROJECT_DIR$/.idea/modules/maskapi/mis.maskapi.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maskservice/mis.maskservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/maskservice/mis.maskservice.main.iml" />
+    </modules>
+  </component>
+</project>
