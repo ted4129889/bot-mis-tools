@@ -5,59 +5,14 @@
         <fieldName>db-ckhmr-entpno</fieldName>
         <maskType>1</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsddb.db_ckhmr_dds</table>
-    <field>
-        <fieldName>db-ckhmr-entpno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-ckhmr-pidno</fieldName>
         <maskType>1</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsddb.db_ckhmr_dds</table>
-    <field>
-        <fieldName>db-ckhmr-entpno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-ckhmr-pidno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-ckhmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsddb.db_ckhmr_dds</table>
-    <field>
-        <fieldName>db-ckhmr-entpno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-ckhmr-pidno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-ckhmr-actno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-ckhmr-grpacno</fieldName>
         <maskType>2</maskType>

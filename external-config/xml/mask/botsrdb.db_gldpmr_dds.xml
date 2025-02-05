@@ -5,59 +5,14 @@
         <fieldName>db-gldpmr-herit</fieldName>
         <maskType>1</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_gldpmr_dds</table>
-    <field>
-        <fieldName>db-gldpmr-herit</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-gldpmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_gldpmr_dds</table>
-    <field>
-        <fieldName>db-gldpmr-herit</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-gldpmr-actno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-gldpmr-invact</fieldName>
         <maskType>2</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_gldpmr_dds</table>
-    <field>
-        <fieldName>db-gldpmr-herit</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-gldpmr-actno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-gldpmr-invact</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-gldpmr-telact</fieldName>
         <maskType>2</maskType>

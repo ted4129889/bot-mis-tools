@@ -5,16 +5,6 @@
         <fieldName>db-ladv-actno</fieldName>
         <maskType>2</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_ladv_dds</table>
-    <field>
-        <fieldName>db-ladv-actno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-ladv-oactno</fieldName>
         <maskType>2</maskType>

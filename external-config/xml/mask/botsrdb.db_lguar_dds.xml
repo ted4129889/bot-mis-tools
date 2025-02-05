@@ -5,35 +5,10 @@
         <fieldName>db-lguar-pidno</fieldName>
         <maskType>1</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_lguar_dds</table>
-    <field>
-        <fieldName>db-lguar-pidno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-lguar-actno</fieldName>
         <maskType>2</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_lguar_dds</table>
-    <field>
-        <fieldName>db-lguar-pidno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-lguar-actno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-lguar-name</fieldName>
         <maskType>4</maskType>

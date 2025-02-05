@@ -5,16 +5,6 @@
         <fieldName>db-fchtr-mactno</fieldName>
         <maskType>2</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_fchtr_dds</table>
-    <field>
-        <fieldName>db-fchtr-mactno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-fchtr-actno</fieldName>
         <maskType>2</maskType>

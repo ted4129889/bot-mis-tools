@@ -5,88 +5,18 @@
         <fieldName>db-pbmr-entpno</fieldName>
         <maskType>1</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_pbmr_dds</table>
-    <field>
-        <fieldName>db-pbmr-entpno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-pbmr-pidno</fieldName>
         <maskType>1</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_pbmr_dds</table>
-    <field>
-        <fieldName>db-pbmr-entpno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-pbmr-pidno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-pbmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_pbmr_dds</table>
-    <field>
-        <fieldName>db-pbmr-entpno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-pbmr-pidno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-pbmr-actno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-pbmr-xwactno</fieldName>
         <maskType>2</maskType>
     </field>
-</data>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<data>
-    <table>botsrdb.db_pbmr_dds</table>
-    <field>
-        <fieldName>db-pbmr-entpno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-pbmr-pidno</fieldName>
-        <maskType>1</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-pbmr-actno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
-    <field>
-        <fieldName>db-pbmr-xwactno</fieldName>
-        <maskType>2</maskType>
-    </field>
-</data>
     <field>
         <fieldName>db-pbmr-telno</fieldName>
         <maskType>7</maskType>
