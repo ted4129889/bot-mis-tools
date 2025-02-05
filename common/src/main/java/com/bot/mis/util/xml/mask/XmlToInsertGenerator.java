@@ -1,7 +1,8 @@
-/* (C) 2024 */
+/* (C) 2025 */
 package com.bot.mis.util.xml.mask;
 
 import com.bot.mis.util.files.TextFileUtil;
+import com.bot.mis.util.xml.mask.allowedTable.AllowedTableName;
 import com.bot.mis.util.xml.mask.xmltag.Field;
 import com.bot.mis.util.xml.vo.XmlData;
 import com.bot.txcontrol.config.logger.ApLogHelper;
@@ -44,6 +45,9 @@ public class XmlToInsertGenerator {
 
     private final String SQL_SELECT = "select * from ";
 
+    // fix SQL Injection
+    private final String SQL_SELECT_TABLE = "select * from %s";
+
     public void sqlConvInsertTxt(String xmlFile) {
         XmlParser xmlParser = new XmlParser();
         try {
@@ -60,11 +64,17 @@ public class XmlToInsertGenerator {
             // <table>
             String tableName = parsedXml.getTable().getTableName();
 
+            // 白名單驗證，防止SQL Injection
+            if (!AllowedTableName.contains(tableName)) {
+                throw new IllegalArgumentException("Invalid table name: " + tableName);
+            }
+
             // <field>
             List<Field> fields = parsedXml.getFieldList();
 
             // get SQL data
-            List<Map<String, Object>> sqlData = getSqlData(SQL_SELECT + tableName);
+            List<Map<String, Object>> sqlData =
+                    getSqlData(String.format(SQL_SELECT_TABLE, tableName));
 
             // mask data
             dataMasker.maskData(sqlData, fields);

@@ -3,12 +3,9 @@ package com.bot.mis.util.xml.mask;
 
 import com.bot.mis.util.xml.config.SecureXmlMapper;
 import com.bot.mis.util.xml.vo.XmlData;
-import com.bot.txcontrol.config.logger.ApLogHelper;
-import com.bot.txcontrol.eum.LogType;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.io.File;
 import java.io.IOException;
-import lombok.extern.slf4j.Slf4j;
 
 public class XmlParser {
 
