@@ -5,6 +5,16 @@
         <fieldName>db-fbpmr-cifkey</fieldName>
         <maskType>1</maskType>
     </field>
+</data>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <table>botsrdb.db_fbpmr_dds</table>
+    <field>
+        <fieldName>db-fbpmr-cifkey</fieldName>
+        <maskType>1</maskType>
+    </field>
+</data>
     <field>
         <fieldName>db-fbpmr-ovduact</fieldName>
         <maskType>2</maskType>
