@@ -2,11 +2,11 @@
 <data>
     <table>botlddb.db_lnmr_dds</table>
     <field>
-        <fieldName>db-lnmr-actno</fieldName>
+        <fieldName>db_lnmr_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-lnmr-cactno</fieldName>
+        <fieldName>db_lnmr_cactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

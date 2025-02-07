@@ -2,7 +2,7 @@
 <data>
     <table>botsrdb.db_pbov_dds</table>
     <field>
-        <fieldName>db-pbov-actno</fieldName>
+        <fieldName>db_pbov_actno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

@@ -2,7 +2,7 @@
 <data>
     <table>botsrdb.db_lcoll_dds</table>
     <field>
-        <fieldName>db-lcoll-actno</fieldName>
+        <fieldName>db_lcoll_actno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

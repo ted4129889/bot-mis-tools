@@ -2,27 +2,27 @@
 <data>
     <table>botsrdb.db_lsco_dds</table>
     <field>
-        <fieldName>db-lsco-pidno</fieldName>
+        <fieldName>db_lsco_pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-lsco-actno</fieldName>
+        <fieldName>db_lsco_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-lsco-ipactn</fieldName>
+        <fieldName>db_lsco_ipactn</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-lsco-trpact</fieldName>
+        <fieldName>db_lsco_trpact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-lsco-name</fieldName>
+        <fieldName>db_lsco_name</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db-lsco-tela</fieldName>
+        <fieldName>db_lsco_tela</fieldName>
         <maskType>7</maskType>
     </field>
 </data>

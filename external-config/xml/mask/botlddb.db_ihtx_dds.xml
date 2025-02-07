@@ -2,11 +2,11 @@
 <data>
     <table>botlddb.db_ihtx_dds</table>
     <field>
-        <fieldName>db-ihtx-actno</fieldName>
+        <fieldName>db-_ihtx_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-ihtx-trpact</fieldName>
+        <fieldName>db_ihtx_trpact</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

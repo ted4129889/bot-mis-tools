@@ -2,67 +2,67 @@
 <data>
     <table>botsrdb.db_cifpsn_dds</table>
     <field>
-        <fieldName>db-cifpsn-pidno</fieldName>
+        <fieldName>db_cifpsn_pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-agentid</fieldName>
+        <fieldName>db_cifpsn_agentid</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-foreid</fieldName>
+        <fieldName>db_cifpsn_foreid</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-luactno</fieldName>
+        <fieldName>db_cifpsn_luactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-name</fieldName>
+        <fieldName>db_cifpsn_name</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-addr</fieldName>
+        <fieldName>db_cifpsn_addr</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-cttaddr</fieldName>
+        <fieldName>db_cifpsn_cttaddr</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-email</fieldName>
+        <fieldName>db_cifpsn_email</fieldName>
         <maskType>6</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-hsrno</fieldName>
+        <fieldName>db_cifpsn_hsrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-osrno</fieldName>
+        <fieldName>db_cifpsn_osrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-fsrno</fieldName>
+        <fieldName>db_cifpsn_fsrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-cphone</fieldName>
+        <fieldName>db_cifpsn_cphone</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-cttsrno</fieldName>
+        <fieldName>db_cifpsn_cttsrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-birday</fieldName>
+        <fieldName>db_cifpsn_birday</fieldName>
         <maskType>8</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-cmpname</fieldName>
+        <fieldName>db_cifpsn_cmpname</fieldName>
         <maskType>17</maskType>
     </field>
     <field>
-        <fieldName>db-cifpsn-passport</fieldName>
+        <fieldName>db_cifpsn_passport</fieldName>
         <maskType>18</maskType>
     </field>
 </data>

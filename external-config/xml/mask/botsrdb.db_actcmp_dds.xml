@@ -2,27 +2,27 @@
 <data>
     <table>botsrdb.db_actcmp_dds</table>
     <field>
-        <fieldName>db-actcmp-hentpno</fieldName>
+        <fieldName>db_actcmp_hentpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-actcmp-actno</fieldName>
+        <fieldName>db_actcmp_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-actcmp-cmpname</fieldName>
+        <fieldName>db_actcmp_cmpname</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db-actcmp-addr</fieldName>
+        <fieldName>db_actcmp_addr</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db-actcmp-csrno</fieldName>
+        <fieldName>db_actcmp_csrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db-actcmp-cphone</fieldName>
+        <fieldName>db_actcmp_cphone</fieldName>
         <maskType>7</maskType>
     </field>
 </data>

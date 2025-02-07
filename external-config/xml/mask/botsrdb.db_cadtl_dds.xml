@@ -2,7 +2,7 @@
 <data>
     <table>botsrdb.db_cadtl_dds</table>
     <field>
-        <fieldName>db-cadtl-cifkey</fieldName>
+        <fieldName>db_cadtl_cifkey</fieldName>
         <maskType>1</maskType>
     </field>
 </data>

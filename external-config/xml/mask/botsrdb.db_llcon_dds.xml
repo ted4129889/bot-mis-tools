@@ -2,47 +2,47 @@
 <data>
     <table>botsrdb.db_llcon_dds</table>
     <field>
-        <fieldName>db-llcon-pidno</fieldName>
+        <fieldName>db_llcon_pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-entpno</fieldName>
+        <fieldName>db_llcon_entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-bsid</fieldName>
+        <fieldName>db_llcon_bsid</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-actno</fieldName>
+        <fieldName>db_llcon_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-ipactno</fieldName>
+        <fieldName>db_llcon_ipactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-apact</fieldName>
+        <fieldName>db_llcon_apact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-payact</fieldName>
+        <fieldName>db_llcon_payact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-oactno</fieldName>
+        <fieldName>db_llcon_oactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-trpact</fieldName>
+        <fieldName>db_llcon_trpact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-bkact</fieldName>
+        <fieldName>db_llcon_bkact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-llcon-telno</fieldName>
+        <fieldName>db_llcon_telno</fieldName>
         <maskType>7</maskType>
     </field>
 </data>

@@ -2,15 +2,15 @@
 <data>
     <table>botsrdb.db_gldptr_dds</table>
     <field>
-        <fieldName>db-gldptr-herit</fieldName>
+        <fieldName>db_gldptr_herit</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-gldptr-actno</fieldName>
+        <fieldName>db_gldptr_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-gldptr-trnact</fieldName>
+        <fieldName>db_gldptr_trnact</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

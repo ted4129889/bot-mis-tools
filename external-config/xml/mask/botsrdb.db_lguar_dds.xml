@@ -2,15 +2,15 @@
 <data>
     <table>botsrdb.db_lguar_dds</table>
     <field>
-        <fieldName>db-lguar-pidno</fieldName>
+        <fieldName>db_lguar_pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-lguar-actno</fieldName>
+        <fieldName>db_lguar_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-lguar-name</fieldName>
+        <fieldName>db_lguar_name</fieldName>
         <maskType>4</maskType>
     </field>
 </data>

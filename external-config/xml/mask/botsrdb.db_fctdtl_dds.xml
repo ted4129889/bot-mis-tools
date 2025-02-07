@@ -2,23 +2,23 @@
 <data>
     <table>botsrdb.db_fctdtl_dds</table>
     <field>
-        <fieldName>db-fctdtl-actno</fieldName>
+        <fieldName>db_fctdtl_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-fctdtl-mactno</fieldName>
+        <fieldName>db_fctdtl_mactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-fctdtl-trnact</fieldName>
+        <fieldName>db_fctdtl_trnact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-fctdtl-lactno</fieldName>
+        <fieldName>db_fctdtl_lactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-fctdtl-nactno</fieldName>
+        <fieldName>db_fctdtl_nactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

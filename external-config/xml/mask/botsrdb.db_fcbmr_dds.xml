@@ -2,7 +2,7 @@
 <data>
     <table>botsrdb.db_fcbmr_dds</table>
     <field>
-        <fieldName>db-fcbmr-cifkey</fieldName>
+        <fieldName>db_fcbmr_cifkey</fieldName>
         <maskType>1</maskType>
     </field>
 </data>

@@ -2,23 +2,23 @@
 <data>
     <table>botsrdb.db_glblmr_dds</table>
     <field>
-        <fieldName>db-glblmr-unino</fieldName>
+        <fieldName>db_glblmr_unino</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-glblmr-aounino</fieldName>
+        <fieldName>db_glblmr_aounino</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-glblmr-actno</fieldName>
+        <fieldName>db_glblmr_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-glblmr-oactno</fieldName>
+        <fieldName>db_glblmr_oactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-glblmr-dpactno</fieldName>
+        <fieldName>db_glblmr_dpactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

@@ -2,15 +2,15 @@
 <data>
     <table>botsrdb.db_feiln_dds</table>
     <field>
-        <fieldName>db-feiln-cifkey</fieldName>
+        <fieldName>db_feiln_cifkey</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-feiln-lnact</fieldName>
+        <fieldName>db_feiln_lnact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-feiln-pbactno</fieldName>
+        <fieldName>db_feiln_pbactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

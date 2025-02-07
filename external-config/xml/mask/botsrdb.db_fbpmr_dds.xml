@@ -2,11 +2,11 @@
 <data>
     <table>botsrdb.db_fbpmr_dds</table>
     <field>
-        <fieldName>db-fbpmr-cifkey</fieldName>
+        <fieldName>db_fbpmr_cifkey</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-fbpmr-ovduact</fieldName>
+        <fieldName>db_fbpmr_ovduact</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

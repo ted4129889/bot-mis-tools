@@ -2,7 +2,7 @@
 <data>
     <table>botsrdb.db_gldpinv_dds</table>
     <field>
-        <fieldName>db-gldpinv-actno</fieldName>
+        <fieldName>db_gldpinv_actno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

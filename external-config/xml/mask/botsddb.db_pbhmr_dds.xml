@@ -2,19 +2,19 @@
 <data>
     <table>botsddb.db_pbhmr_dds</table>
     <field>
-        <fieldName>db-pbhmr-entpno</fieldName>
+        <fieldName>db_pbhmr_entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-pbhmr-pidno</fieldName>
+        <fieldName>db_pbhmr_pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-pbhmr-cmpentpno</fieldName>
+        <fieldName>db_pbhmr_cmpentpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-pbhmr-actno</fieldName>
+        <fieldName>db_pbhmr_actno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

@@ -2,11 +2,11 @@
 <data>
     <table>botsrdb.db_gldpsa_dds</table>
     <field>
-        <fieldName>db-gldpsa-actno</fieldName>
+        <fieldName>db_gldpsa_actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-gldpsa-saactno</fieldName>
+        <fieldName>db_gldpsa_saactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

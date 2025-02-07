@@ -2,11 +2,11 @@
 <data>
     <table>botsrdb.db_cifact_dds</table>
     <field>
-        <fieldName>db-cifact-cifkey</fieldName>
+        <fieldName>db_cifact_cifkey</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-cifact-actno</fieldName>
+        <fieldName>db_cifact_actno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

@@ -2,27 +2,27 @@
 <data>
     <table>botsrdb.db_fcmr_dds</table>
     <field>
-        <fieldName>db-fcmr-unino</fieldName>
+        <fieldName>db_fcmr_unino</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-fcmr-aounino</fieldName>
+        <fieldName>db_fcmr_aounino</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-fcmr-pidno</fieldName>
+        <fieldName>db_fcmr_pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db-fcmr-mactno</fieldName>
+        <fieldName>db_fcmr_mactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-fcmr-moactno</fieldName>
+        <fieldName>db_fcmr_moactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db-fcmr-miactno</fieldName>
+        <fieldName>db_fcmr_miactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>
