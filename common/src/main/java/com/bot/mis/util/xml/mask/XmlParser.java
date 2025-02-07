@@ -10,19 +10,26 @@ import java.io.IOException;
 public class XmlParser {
 
     private static final String XML_PATH = "external-config/xml/";
+    private final XmlMapper xmlMapper;
+
+    public XmlParser() {
+        this.xmlMapper = SecureXmlMapper.createXmlMapper();
+    }
 
     public XmlData parseXmlFile(String xmlFileName) throws IOException {
-        XmlMapper xmlMapper = SecureXmlMapper.createXmlMapper();
-
         File validXmlPath = new File(XML_PATH);
 
         /* FORTIFY: The file path is securely controlled and validated */
         File file = new File(xmlFileName);
 
-        if (!file.getCanonicalPath().startsWith(validXmlPath.getCanonicalPath())) {
+        if (!isValidPath(file, validXmlPath)) {
             throw new SecurityException("Unauthorized path");
         }
 
         return xmlMapper.readValue(file, XmlData.class);
+    }
+
+    private boolean isValidPath(File file, File validXmlPath) throws IOException {
+        return file.getCanonicalPath().startsWith(validXmlPath.getCanonicalPath());
     }
 }
