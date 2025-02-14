@@ -2,6 +2,7 @@
 package com.bot.mis.util.xml.mask;
 
 import com.bot.mis.util.files.TextFileUtil;
+import com.bot.mis.util.xml.config.SecureXmlMapper;
 import com.bot.mis.util.xml.mask.allowedTable.AllowedTableName;
 import com.bot.mis.util.xml.mask.xmltag.Field;
 import com.bot.mis.util.xml.vo.XmlData;
@@ -9,12 +10,17 @@ import com.bot.txcontrol.config.logger.ApLogHelper;
 import com.bot.txcontrol.eum.LogType;
 import com.bot.txcontrol.exception.LogicException;
 import com.bot.txcontrol.util.dump.ExceptionDump;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.sql.DataSource;
+
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,38 +37,41 @@ public class XmlToInsertGenerator {
     @Value("${localFile.mis.batch.output}")
     private String outputFilePath;
 
-    @Autowired private TextFileUtil textFileUtil;
-    @Autowired private DataSource dataSource;
-    @Autowired private DataMasker dataMasker;
+    @Autowired
+    private TextFileUtil textFileUtil;
+    @Autowired
+    private DataSource dataSource;
+    @Autowired
+    private DataMasker dataMasker;
+    @Autowired
+    private XmlParser xmlParser;
     private static final String CHARSET = "BIG5";
     private static final int BUFFER_CAPACITY = 5000;
-    private static final String paramValue = "value";
-    private static final String paranType = "type";
-    private static final String paramLength = "length";
-    private final String STR_XML = ".xml";
+    private static final String PARAM_VALUE = "value";
+    private static final String PARAM_TYPE = "type";
+    private static final String PARAM_LENGTH = "length";
+    private final String XML_EXTENSION = ".xml";
 
-    private final String STR_SQL = ".sql";
-
-    private final String SQL_SELECT = "select * from ";
+    private final String SQL_EXTENSION = ".sql";
+    private final String SPACE = "";
 
     // fix SQL Injection
     private final String SQL_SELECT_TABLE = "select * from %s";
+    private final String SQL_DELETE_TABLE = "delete from %s ;";
+
+    private static final String XML_PATH = "external-config/xml/mask";
+
 
     public void sqlConvInsertTxt(String xmlFile) {
-        XmlParser xmlParser = new XmlParser();
+
         try {
-            String xml = "";
-            if (xmlFile.contains(STR_XML)) {
-                xml = maskXmlFilePath + xmlFile;
-            } else {
-                xml = maskXmlFilePath + xmlFile + STR_XML;
-            }
+            String xml = maskXmlFilePath + xmlFile.replace(XML_EXTENSION, SPACE) + XML_EXTENSION;
 
             // parse Xml
-            XmlData parsedXml = xmlParser.parseXmlFile(xml);
+            XmlData xmlData = xmlParser.parseXmlFile(xml);
 
             // <table>
-            String tableName = parsedXml.getTable().getTableName();
+            String tableName = xmlData.getTable().getTableName();
 
             // 白名單驗證，防止SQL Injection
             if (!AllowedTableName.contains(tableName)) {
@@ -70,7 +79,7 @@ public class XmlToInsertGenerator {
             }
 
             // <field>
-            List<Field> fields = parsedXml.getFieldList();
+            List<Field> fields = xmlData.getFieldList();
 
             // get SQL data
             List<Map<String, Object>> sqlData =
@@ -80,7 +89,7 @@ public class XmlToInsertGenerator {
             dataMasker.maskData(sqlData, fields);
 
             // generate .txt
-            writeFile(generateSQL(tableName, sqlData), outputFilePath + tableName + STR_SQL);
+            writeFile(generateSQL(tableName, sqlData), outputFilePath + tableName + SQL_EXTENSION);
 
         } catch (Exception e) {
             ApLogHelper.error(
@@ -95,6 +104,9 @@ public class XmlToInsertGenerator {
 
         StringBuilder result;
         List<String> fileContents = new ArrayList<>();
+        String delContent = String.format(SQL_DELETE_TABLE, tableName);
+
+        fileContents.add(delContent);
 
         for (Map<String, Object> mask : maskedSqlData) {
             StringBuilder columns = new StringBuilder();
@@ -107,7 +119,7 @@ public class XmlToInsertGenerator {
                 objValues = entry.getValue();
                 if (objValues instanceof Map) {
                     Map<String, Object> valuesMap = (Map<String, Object>) objValues;
-                    values.append(formatValue(valuesMap.get(paramValue))).append(" ,");
+                    values.append(formatValue(valuesMap.get(PARAM_VALUE))).append(" ,");
                 }
             }
 
@@ -138,7 +150,7 @@ public class XmlToInsertGenerator {
      * 輸出檔案
      *
      * @param fileContents 資料串
-     * @param outFileName 輸出檔案名
+     * @param outFileName  輸出檔案名
      */
     private void writeFile(List<String> fileContents, String outFileName) {
 
@@ -154,8 +166,8 @@ public class XmlToInsertGenerator {
     private List<Map<String, Object>> getSqlData(String sql) {
         List<Map<String, Object>> result = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
-                PreparedStatement pstmt = connection.prepareStatement(sql);
-                ResultSet rs = pstmt.executeQuery()) {
+             PreparedStatement pstmt = connection.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
 
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
@@ -169,9 +181,9 @@ public class XmlToInsertGenerator {
                     int columnLength = metaData.getColumnDisplaySize(i);
 
                     Map<String, Object> columnInfo = new HashMap<>();
-                    columnInfo.put(paramValue, value);
-                    columnInfo.put(paranType, columnType);
-                    columnInfo.put(paramLength, columnLength);
+                    columnInfo.put(PARAM_VALUE, value);
+                    columnInfo.put(PARAM_TYPE, columnType);
+                    columnInfo.put(PARAM_LENGTH, columnLength);
 
                     row.put(columnName, columnInfo);
                 }
@@ -179,7 +191,7 @@ public class XmlToInsertGenerator {
             }
         } catch (SQLException e) {
             ApLogHelper.error(
-                    log, false, LogType.NORMAL.getCode(), ExceptionDump.exception2String(e));
+                    log, false, LogType.NORMAL.getCode(), "XmlToInsertGenerator.getSqlData error");
             throw new LogicException("", "XmlToInsertGenerator.getSqlData error");
         }
         return result;

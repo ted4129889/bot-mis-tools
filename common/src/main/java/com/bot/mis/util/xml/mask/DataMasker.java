@@ -234,7 +234,7 @@ public class DataMasker {
      */
     private String maskJobTitle(String value) {
         // 以統一職稱代替IdConverterByYaml
-        return "領組";
+        return "統一職稱";
     }
 
     /**
