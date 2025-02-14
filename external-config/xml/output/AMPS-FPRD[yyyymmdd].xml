@@ -244,7 +244,7 @@
         <field>
             <fieldName>obufit</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fprd_dds</oTableName>
@@ -262,7 +262,7 @@
         <field>
             <fieldName>dbufit</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fprd_dds</oTableName>
@@ -406,7 +406,7 @@
         <field>
             <fieldName>eqamt</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fprd_dds</oTableName>
@@ -424,7 +424,7 @@
         <field>
             <fieldName>eqamt1</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fprd_dds</oTableName>

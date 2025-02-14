@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_fbpmr_dds</table>
+    <table>mis.botsrdb.db_fbpmr_dds</table>
     <field>
-        <fieldName>db_fbpmr_cifkey</fieldName>
+        <fieldName>db-fbpmr-cifkey</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_fbpmr_ovduact</fieldName>
+        <fieldName>db-fbpmr-ovduact</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

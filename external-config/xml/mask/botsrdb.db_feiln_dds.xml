@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_feiln_dds</table>
+    <table>mis.botsrdb.db_feiln_dds</table>
     <field>
-        <fieldName>db_feiln_cifkey</fieldName>
+        <fieldName>db-feiln-cifkey</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_feiln_lnact</fieldName>
+        <fieldName>db-feiln-lnact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_feiln_pbactno</fieldName>
+        <fieldName>db-feiln-pbactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

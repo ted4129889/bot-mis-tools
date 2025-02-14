@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botlddb.db_ihtx_dds</table>
+    <table>mis.botlddb.db_ihtx_dds</table>
     <field>
-        <fieldName>db-_ihtx_actno</fieldName>
+        <fieldName>db-ihtx-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_ihtx_trpact</fieldName>
+        <fieldName>db-ihtx-trpact</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

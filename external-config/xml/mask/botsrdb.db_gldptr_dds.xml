@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_gldptr_dds</table>
+    <table>mis.botsrdb.db_gldptr_dds</table>
     <field>
-        <fieldName>db_gldptr_herit</fieldName>
+        <fieldName>db-gldptr-herit</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_gldptr_actno</fieldName>
+        <fieldName>db-gldptr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_gldptr_trnact</fieldName>
+        <fieldName>db-gldptr-trnact</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

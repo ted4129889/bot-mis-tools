@@ -17,6 +17,15 @@
             <oFieldName>botsddb.db_bhdate_tbsdy</oFieldName>
         </field>
         <field>
+            <fieldName>separator</fieldName>
+            <fieldType>string</fieldType>
+            <format></format>
+            <length>1</length>
+            <align>left</align>
+            <oTableName></oTableName>
+            <oFieldName></oFieldName>
+        </field>
+        <field>
             <fieldName>brno</fieldName>
             <fieldType>string</fieldType>
             <format>000</format>
@@ -26,11 +35,29 @@
             <oFieldName>botsddb.db_fctdtl_sbrno</oFieldName>
         </field>
         <field>
+            <fieldName>separator</fieldName>
+            <fieldType>string</fieldType>
+            <format></format>
+            <length>1</length>
+            <align>left</align>
+            <oTableName></oTableName>
+            <oFieldName></oFieldName>
+        </field>
+        <field>
             <fieldName>sapno</fieldName>
             <fieldType>string</fieldType>
             <format>000</format>
             <length>3</length>
             <align>right</align>
+            <oTableName></oTableName>
+            <oFieldName></oFieldName>
+        </field>
+        <field>
+            <fieldName>separator</fieldName>
+            <fieldType>string</fieldType>
+            <format></format>
+            <length>1</length>
+            <align>left</align>
             <oTableName></oTableName>
             <oFieldName></oFieldName>
         </field>
@@ -44,6 +71,15 @@
             <oFieldName>botsddb.db_fctdtl_curcd</oFieldName>
         </field>
         <field>
+            <fieldName>separator</fieldName>
+            <fieldType>string</fieldType>
+            <format></format>
+            <length>1</length>
+            <align>left</align>
+            <oTableName></oTableName>
+            <oFieldName></oFieldName>
+        </field>
+        <field>
             <fieldName>cnt</fieldName>
             <fieldType>string</fieldType>
             <format>00000000</format>
@@ -53,11 +89,29 @@
             <oFieldName></oFieldName>
         </field>
         <field>
+            <fieldName>separator</fieldName>
+            <fieldType>string</fieldType>
+            <format></format>
+            <length>1</length>
+            <align>left</align>
+            <oTableName></oTableName>
+            <oFieldName></oFieldName>
+        </field>
+        <field>
             <fieldName>bal</fieldName>
             <fieldType>string</fieldType>
             <format>000000000000000.00</format>
             <length>18</length>
             <align>right</align>
+            <oTableName></oTableName>
+            <oFieldName></oFieldName>
+        </field>
+        <field>
+            <fieldName>separator</fieldName>
+            <fieldType>string</fieldType>
+            <format></format>
+            <length>1</length>
+            <align>left</align>
             <oTableName></oTableName>
             <oFieldName></oFieldName>
         </field>

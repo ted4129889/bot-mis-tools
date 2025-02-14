@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_lsco_dds</table>
+    <table>mis.botsrdb.db_lsco_dds</table>
     <field>
-        <fieldName>db_lsco_pidno</fieldName>
+        <fieldName>db-lsco-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lsco_actno</fieldName>
+        <fieldName>db-lsco-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lsco_ipactn</fieldName>
+        <fieldName>db-lsco-ipactn</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lsco_trpact</fieldName>
+        <fieldName>db-lsco-trpact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lsco_name</fieldName>
+        <fieldName>db-lsco-name</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db_lsco_tela</fieldName>
+        <fieldName>db-lsco-tela</fieldName>
         <maskType>7</maskType>
     </field>
 </data>

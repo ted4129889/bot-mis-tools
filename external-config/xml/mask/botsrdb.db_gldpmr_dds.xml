@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_gldpmr_dds</table>
+    <table>mis.botsrdb.db_gldpmr_dds</table>
     <field>
-        <fieldName>db_gldpmr_herit</fieldName>
+        <fieldName>db-gldpmr-herit</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_gldpmr_actno</fieldName>
+        <fieldName>db-gldpmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_gldpmr_invact</fieldName>
+        <fieldName>db-gldpmr-invact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_gldpmr_telact</fieldName>
+        <fieldName>db-gldpmr-telact</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

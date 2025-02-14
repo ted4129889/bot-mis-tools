@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_ctmr_dds</table>
+    <table>mis.botsrdb.db_ctmr_dds</table>
     <field>
-        <fieldName>db_ctmr_unino</fieldName>
+        <fieldName>db-ctmr-unino</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_ctmr_actno</fieldName>
+        <fieldName>db-ctmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_ctmr_trnact</fieldName>
+        <fieldName>db-ctmr-trnact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_ctmr_lact</fieldName>
+        <fieldName>db-ctmr-lact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_ctmr_nact</fieldName>
+        <fieldName>db-ctmr-nact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_ctmr_telno</fieldName>
+        <fieldName>db-ctmr-telno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_ctmr_emprid</fieldName>
+        <fieldName>db-ctmr-emprid</fieldName>
         <maskType>17</maskType>
     </field>
     <field>
-        <fieldName>db_ctmr_payoid</fieldName>
+        <fieldName>db-ctmr-payoid</fieldName>
         <maskType>17</maskType>
     </field>
 </data>

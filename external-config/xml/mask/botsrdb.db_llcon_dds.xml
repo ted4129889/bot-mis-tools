@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_llcon_dds</table>
+    <table>mis.botsrdb.db_llcon_dds</table>
     <field>
-        <fieldName>db_llcon_pidno</fieldName>
+        <fieldName>db-llcon-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_entpno</fieldName>
+        <fieldName>db-llcon-entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_bsid</fieldName>
+        <fieldName>db-llcon-bsid</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_actno</fieldName>
+        <fieldName>db-llcon-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_ipactno</fieldName>
+        <fieldName>db-llcon-ipactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_apact</fieldName>
+        <fieldName>db-llcon-apact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_payact</fieldName>
+        <fieldName>db-llcon-payact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_oactno</fieldName>
+        <fieldName>db-llcon-oactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_trpact</fieldName>
+        <fieldName>db-llcon-trpact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_bkact</fieldName>
+        <fieldName>db-llcon-bkact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_llcon_telno</fieldName>
+        <fieldName>db-llcon-telno</fieldName>
         <maskType>7</maskType>
     </field>
 </data>

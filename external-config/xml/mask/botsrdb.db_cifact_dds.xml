@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_cifact_dds</table>
+    <table>mis.botsrdb.db_cifact_dds</table>
     <field>
-        <fieldName>db_cifact_cifkey</fieldName>
+        <fieldName>db-cifact-cifkey</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_cifact_actno</fieldName>
+        <fieldName>db-cifact-actno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

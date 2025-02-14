@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_pbmr_dds</table>
+    <table>mis.botsrdb.db_pbmr_dds</table>
     <field>
-        <fieldName>db_pbmr_entpno</fieldName>
+        <fieldName>db-pbmr-entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_pbmr_pidno</fieldName>
+        <fieldName>db-pbmr-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_pbmr_actno</fieldName>
+        <fieldName>db-pbmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_pbmr_xwactno</fieldName>
+        <fieldName>db-pbmr-xwactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_pbmr_telno</fieldName>
+        <fieldName>db-pbmr-telno</fieldName>
         <maskType>7</maskType>
     </field>
 </data>

@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_cifcmp_dds</table>
+    <table>mis.botsrdb.db_cifcmp_dds</table>
     <field>
-        <fieldName>db_cifcmp_entpno</fieldName>
+        <fieldName>db-cifcmp-entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_pidno</fieldName>
+        <fieldName>db-cifcmp-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_hentpno</fieldName>
+        <fieldName>db-cifcmp-hentpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_luactno</fieldName>
+        <fieldName>db-cifcmp-luactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_name</fieldName>
+        <fieldName>db-cifcmp-name</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_cmpname</fieldName>
+        <fieldName>db-cifcmp-cmpname</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_addr</fieldName>
+        <fieldName>db-cifcmp-addr</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_cttaddr</fieldName>
+        <fieldName>db-cifcmp-cttaddr</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_email</fieldName>
+        <fieldName>db-cifcmp-email</fieldName>
         <maskType>6</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_csrno</fieldName>
+        <fieldName>db-cifcmp-csrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_osrno</fieldName>
+        <fieldName>db-cifcmp-osrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_fsrno</fieldName>
+        <fieldName>db-cifcmp-fsrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_cphone</fieldName>
+        <fieldName>db-cifcmp-cphone</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_cttsrno</fieldName>
+        <fieldName>db-cifcmp-cttsrno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_cifcmp_birday</fieldName>
+        <fieldName>db-cifcmp-birday</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

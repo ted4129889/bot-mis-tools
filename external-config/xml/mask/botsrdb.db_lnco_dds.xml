@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_lnco_dds</table>
+    <table>mis.botsrdb.db_lnco_dds</table>
     <field>
-        <fieldName>db_lnco_pidno</fieldName>
+        <fieldName>db-lnco-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_entpno</fieldName>
+        <fieldName>db-lnco-entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_lentpno</fieldName>
+        <fieldName>db-lnco-lentpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_actno</fieldName>
+        <fieldName>db-lnco-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_trpact</fieldName>
+        <fieldName>db-lnco-trpact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_ipactn</fieldName>
+        <fieldName>db-lnco-ipactn</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_ctactno</fieldName>
+        <fieldName>db-lnco-ctactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_llcon</fieldName>
+        <fieldName>db-lnco-llcon</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_pbmract</fieldName>
+        <fieldName>db-lnco-pbmract</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_name</fieldName>
+        <fieldName>db-lnco-name</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_tela1</fieldName>
+        <fieldName>db-lnco-tela1</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_tela2</fieldName>
+        <fieldName>db-lnco-tela2</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_tela3</fieldName>
+        <fieldName>db-lnco-tela3</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_lnco_cellphon</fieldName>
+        <fieldName>db-lnco-cellphon</fieldName>
         <maskType>7</maskType>
     </field>
 </data>

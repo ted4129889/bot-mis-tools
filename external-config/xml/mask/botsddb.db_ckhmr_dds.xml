@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsddb.db_ckhmr_dds</table>
+    <table>mis.botsddb.db_ckhmr_dds</table>
     <field>
-        <fieldName>db_ckhmr_entpno</fieldName>
+        <fieldName>db-ckhmr-entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_ckhmr_pidno</fieldName>
+        <fieldName>db-ckhmr-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_ckhmr_actno</fieldName>
+        <fieldName>db-ckhmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_ckhmr_grpacno</fieldName>
+        <fieldName>db-ckhmr-grpacno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

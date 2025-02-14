@@ -64,7 +64,7 @@
         <field>
             <fieldName>tdbal</fieldName>
             <fieldType>string</fieldType>
-            <format>-000000000000000.00</format>
+            <format> 000000000000000.00;-000000000000000.00</format>
             <length>19</length>
             <align>left</align>
             <oTableName></oTableName>

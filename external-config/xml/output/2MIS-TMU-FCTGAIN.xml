@@ -45,7 +45,7 @@
         <field>
             <fieldName>dbuamt</fieldName>
             <fieldType>numeric</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>16</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -63,7 +63,7 @@
         <field>
             <fieldName>obuamt</fieldName>
             <fieldType>numeric</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>16</length>
             <align>right</align>
             <oTableName></oTableName>

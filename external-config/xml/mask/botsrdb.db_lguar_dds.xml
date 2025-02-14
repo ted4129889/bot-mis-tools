@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_lguar_dds</table>
+    <table>mis.botsrdb.db_lguar_dds</table>
     <field>
-        <fieldName>db_lguar_pidno</fieldName>
+        <fieldName>db-lguar-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lguar_actno</fieldName>
+        <fieldName>db-lguar-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lguar_name</fieldName>
+        <fieldName>db-lguar-name</fieldName>
         <maskType>4</maskType>
     </field>
 </data>

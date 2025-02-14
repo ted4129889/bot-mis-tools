@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsddb.db_cthtr_dds</table>
+    <table>mis.botsddb.db_cthtr_dds</table>
     <field>
-        <fieldName>db_cthtr_actno</fieldName>
+        <fieldName>db-cthtr-actno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

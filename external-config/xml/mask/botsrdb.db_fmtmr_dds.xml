@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_fmtmr_dds</table>
+    <table>mis.botsrdb.db_fmtmr_dds</table>
     <field>
-        <fieldName>db_fmtmr_actno</fieldName>
+        <fieldName>db-fmtmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_fmtmr_mactno</fieldName>
+        <fieldName>db-fmtmr-mactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

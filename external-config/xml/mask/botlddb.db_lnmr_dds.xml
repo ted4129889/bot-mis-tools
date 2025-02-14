@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botlddb.db_lnmr_dds</table>
+    <table>mis.botlddb.db_lnmr_dds</table>
     <field>
-        <fieldName>db_lnmr_actno</fieldName>
+        <fieldName>db-lnmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lnmr_cactno</fieldName>
+        <fieldName>db-lnmr-cactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

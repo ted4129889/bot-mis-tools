@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_glactmr_dds</table>
+    <table>mis.botsrdb.db_glactmr_dds</table>
     <field>
-        <fieldName>db_glactmr_unino</fieldName>
+        <fieldName>db-glactmr-unino</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_glactmr_actno</fieldName>
+        <fieldName>db-glactmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_glactmr_ltfxactno</fieldName>
+        <fieldName>db-glactmr-ltfxactno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_glactmr_ebact</fieldName>
+        <fieldName>db-glactmr-ebact</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_glactmr_ltdpactno</fieldName>
+        <fieldName>db-glactmr-ltdpactno</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsrdb.db_fcif_dds</table>
+    <table>mis.botsrdb.db_fcif_dds</table>
     <field>
-        <fieldName>db_fcif_cifkey</fieldName>
+        <fieldName>db-fcif-cifkey</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_pidno</fieldName>
+        <fieldName>db-fcif-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_ename</fieldName>
+        <fieldName>db-fcif-ename</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_pname</fieldName>
+        <fieldName>db-fcif-pname</fieldName>
         <maskType>4</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_eaddr</fieldName>
+        <fieldName>db-fcif-eaddr</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_caddr</fieldName>
+        <fieldName>db-fcif-caddr</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_caddr2</fieldName>
+        <fieldName>db-fcif-caddr2</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_caddr3</fieldName>
+        <fieldName>db-fcif-caddr3</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_caddr4</fieldName>
+        <fieldName>db-fcif-caddr4</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_caddr5</fieldName>
+        <fieldName>db-fcif-caddr5</fieldName>
         <maskType>5</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_email</fieldName>
+        <fieldName>db-fcif-email</fieldName>
         <maskType>6</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_telno</fieldName>
+        <fieldName>db-fcif-telno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_faxno</fieldName>
+        <fieldName>db-fcif-faxno</fieldName>
         <maskType>7</maskType>
     </field>
     <field>
-        <fieldName>db_fcif_birdt</fieldName>
+        <fieldName>db-fcif-birdt</fieldName>
         <maskType>8</maskType>
     </field>
 </data>

@@ -244,7 +244,7 @@
         <field>
             <fieldName>ydbal</fieldName>
             <fieldType>string</fieldType>
-            <format>-0000000000000.00</format>
+            <format> 0000000000000.00;-0000000000000.00</format>
             <length>35</length>
             <align>right</align>
             <oTableName></oTableName>

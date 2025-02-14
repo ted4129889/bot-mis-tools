@@ -46,7 +46,7 @@
         <field>
             <fieldName>irinst</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -64,7 +64,7 @@
         <field>
             <fieldName>irgain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -82,7 +82,7 @@
         <field>
             <fieldName>irfee</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -100,7 +100,7 @@
         <field>
             <fieldName>orinst</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -118,7 +118,7 @@
         <field>
             <fieldName>orgain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -136,7 +136,7 @@
         <field>
             <fieldName>orfee</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -154,7 +154,7 @@
         <field>
             <fieldName>exinst</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -172,7 +172,7 @@
         <field>
             <fieldName>exgain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -190,7 +190,7 @@
         <field>
             <fieldName>exfee</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -208,7 +208,7 @@
         <field>
             <fieldName>iminst</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -226,7 +226,7 @@
         <field>
             <fieldName>imgain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -244,7 +244,7 @@
         <field>
             <fieldName>imfee</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -262,7 +262,7 @@
         <field>
             <fieldName>lcfee</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -280,7 +280,7 @@
         <field>
             <fieldName>dpgain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -298,7 +298,7 @@
         <field>
             <fieldName>ctgain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -316,7 +316,7 @@
         <field>
             <fieldName>exgl</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -334,7 +334,7 @@
         <field>
             <fieldName>otgl</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -352,7 +352,7 @@
         <field>
             <fieldName>otfee</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -370,7 +370,7 @@
         <field>
             <fieldName>ckgain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -388,7 +388,7 @@
         <field>
             <fieldName>lngain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -406,7 +406,7 @@
         <field>
             <fieldName>lnfee</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -424,7 +424,7 @@
         <field>
             <fieldName>lnotgl</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -442,7 +442,7 @@
         <field>
             <fieldName>bofee</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -460,7 +460,7 @@
         <field>
             <fieldName>exglcn</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -478,7 +478,7 @@
         <field>
             <fieldName>sharamt</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -496,7 +496,7 @@
         <field>
             <fieldName>synamt</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -514,7 +514,7 @@
         <field>
             <fieldName>fingain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -532,7 +532,7 @@
         <field>
             <fieldName>frtgain</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>

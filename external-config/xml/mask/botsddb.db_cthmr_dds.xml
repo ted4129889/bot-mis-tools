@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botsddb.db_cthmr_dds</table>
+    <table>mis.botsddb.db_cthmr_dds</table>
     <field>
-        <fieldName>db_cthmr_entpno</fieldName>
+        <fieldName>db-cthmr-entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_cthmr_pidno</fieldName>
+        <fieldName>db-cthmr-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_cthmr_actno</fieldName>
+        <fieldName>db-cthmr-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_cthmr_emprid</fieldName>
+        <fieldName>db-cthmr-emprid</fieldName>
         <maskType>17</maskType>
     </field>
     <field>
-        <fieldName>db_cthmr_payoid</fieldName>
+        <fieldName>db-cthmr-payoid</fieldName>
         <maskType>17</maskType>
     </field>
 </data>

@@ -244,7 +244,7 @@
         <field>
             <fieldName>ivtamt1</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fcupr_dds</oTableName>
@@ -262,7 +262,7 @@
         <field>
             <fieldName>fitamt1</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fcupr_dds</oTableName>
@@ -514,7 +514,7 @@
         <field>
             <fieldName>eqamt</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fcupr_dds</oTableName>
@@ -532,7 +532,7 @@
         <field>
             <fieldName>ivtamt2</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fcpdl_dds</oTableName>
@@ -550,7 +550,7 @@
         <field>
             <fieldName>fitamt2</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fcpdl_dds</oTableName>
@@ -568,7 +568,7 @@
         <field>
             <fieldName>totfit</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fcpdl_dds</oTableName>
@@ -586,7 +586,7 @@
         <field>
             <fieldName>ttotfit</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName>db_fcpdl_dds</oTableName>

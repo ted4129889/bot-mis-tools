@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-    <table>botlddb.db_lcon_dds</table>
+    <table>mis.botlddb.db_lcon_dds</table>
     <field>
-        <fieldName>db_lcon_entpno</fieldName>
+        <fieldName>db-lcon-entpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lcon_pidno</fieldName>
+        <fieldName>db-lcon-pidno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lcon_bsid</fieldName>
+        <fieldName>db-lcon-bsid</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lcon_lentpno</fieldName>
+        <fieldName>db-lcon-lentpno</fieldName>
         <maskType>1</maskType>
     </field>
     <field>
-        <fieldName>db_lcon_actno</fieldName>
+        <fieldName>db-lcon-actno</fieldName>
         <maskType>2</maskType>
     </field>
     <field>
-        <fieldName>db_lcon_autact</fieldName>
+        <fieldName>db-lcon-autact</fieldName>
         <maskType>2</maskType>
     </field>
 </data>

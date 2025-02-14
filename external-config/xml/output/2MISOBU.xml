@@ -53,6 +53,15 @@
             <oFieldName>db_fcmr_unino</oFieldName>
         </field>
         <field>
+            <fieldName>separator</fieldName>
+            <fieldType>string</fieldType>
+            <format></format>
+            <length>1</length>
+            <align>left</align>
+            <oTableName></oTableName>
+            <oFieldName></oFieldName>
+        </field>
+        <field>
             <fieldName>mbrno</fieldName>
             <fieldType>string</fieldType>
             <format>000</format>
@@ -152,6 +161,15 @@
             <oFieldName></oFieldName>
         </field>
         <field>
+            <fieldName>separator</fieldName>
+            <fieldType>string</fieldType>
+            <format></format>
+            <length>1</length>
+            <align>left</align>
+            <oTableName></oTableName>
+            <oFieldName></oFieldName>
+        </field>
+        <field>
             <fieldName>actcls</fieldName>
             <fieldType>string</fieldType>
             <format>0</format>
@@ -172,7 +190,7 @@
         <field>
             <fieldName>avbal</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
@@ -190,7 +208,7 @@
         <field>
             <fieldName>ntavbal</fieldName>
             <fieldType>string</fieldType>
-            <format>-00000000000.00</format>
+            <format> 00000000000.00;-00000000000.00</format>
             <length>15</length>
             <align>right</align>
             <oTableName></oTableName>
