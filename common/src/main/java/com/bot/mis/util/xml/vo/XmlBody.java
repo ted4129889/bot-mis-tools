@@ -26,5 +26,8 @@ public class XmlBody {
     @JacksonXmlProperty(localName = "field")
     private List<XmlField> fieldList = new ArrayList<>();
 
+    @JacksonXmlProperty(localName = "dataKey")
+    private String dataKey;
+
     // Getters and Setters
 }

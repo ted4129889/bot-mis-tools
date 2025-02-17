@@ -71,7 +71,7 @@ public class DataMasker {
      * @param maskType the type of masking to apply
      * @return the masked value
      */
-    private String applyMask(String value, String maskType) {
+    public String applyMask(String value, String maskType) {
         // 如果value為空則直接return
         if (value == null || value.isEmpty() || value.isBlank()) return value;
 
