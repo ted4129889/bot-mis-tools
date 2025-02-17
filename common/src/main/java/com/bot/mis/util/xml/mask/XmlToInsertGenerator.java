@@ -2,7 +2,6 @@
 package com.bot.mis.util.xml.mask;
 
 import com.bot.mis.util.files.TextFileUtil;
-import com.bot.mis.util.xml.config.SecureXmlMapper;
 import com.bot.mis.util.xml.mask.allowedTable.AllowedTableName;
 import com.bot.mis.util.xml.mask.xmltag.Field;
 import com.bot.mis.util.xml.vo.XmlData;
@@ -10,17 +9,12 @@ import com.bot.txcontrol.config.logger.ApLogHelper;
 import com.bot.txcontrol.eum.LogType;
 import com.bot.txcontrol.exception.LogicException;
 import com.bot.txcontrol.util.dump.ExceptionDump;
-
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.sql.DataSource;
-
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,14 +31,10 @@ public class XmlToInsertGenerator {
     @Value("${localFile.mis.batch.output}")
     private String outputFilePath;
 
-    @Autowired
-    private TextFileUtil textFileUtil;
-    @Autowired
-    private DataSource dataSource;
-    @Autowired
-    private DataMasker dataMasker;
-    @Autowired
-    private XmlParser xmlParser;
+    @Autowired private TextFileUtil textFileUtil;
+    @Autowired private DataSource dataSource;
+    @Autowired private DataMasker dataMasker;
+    @Autowired private XmlParser xmlParser;
     private static final String CHARSET = "BIG5";
     private static final int BUFFER_CAPACITY = 5000;
     private static final String PARAM_VALUE = "value";
@@ -60,7 +50,6 @@ public class XmlToInsertGenerator {
     private final String SQL_DELETE_TABLE = "delete from %s ;";
 
     private static final String XML_PATH = "external-config/xml/mask";
-
 
     public void sqlConvInsertTxt(String xmlFile) {
 
@@ -150,7 +139,7 @@ public class XmlToInsertGenerator {
      * 輸出檔案
      *
      * @param fileContents 資料串
-     * @param outFileName  輸出檔案名
+     * @param outFileName 輸出檔案名
      */
     private void writeFile(List<String> fileContents, String outFileName) {
 
@@ -166,8 +155,8 @@ public class XmlToInsertGenerator {
     private List<Map<String, Object>> getSqlData(String sql) {
         List<Map<String, Object>> result = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement pstmt = connection.prepareStatement(sql);
-             ResultSet rs = pstmt.executeQuery()) {
+                PreparedStatement pstmt = connection.prepareStatement(sql);
+                ResultSet rs = pstmt.executeQuery()) {
 
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
