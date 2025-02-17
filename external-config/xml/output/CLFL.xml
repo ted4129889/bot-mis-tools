@@ -6,6 +6,7 @@
         <separator></separator>
     </header>
     <body>
+        <dataKey></dataKey>
         <useSqlData>false</useSqlData>
         <separator>$</separator>
         <field>
