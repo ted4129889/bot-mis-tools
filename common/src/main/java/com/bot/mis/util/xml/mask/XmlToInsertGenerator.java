@@ -62,17 +62,13 @@ public class XmlToInsertGenerator {
             // <table>
             String tableName = xmlData.getTable().getTableName();
 
-            // 白名單驗證，防止SQL Injection
-            if (!AllowedTableName.contains(tableName)) {
-                throw new IllegalArgumentException("Invalid table name: " + tableName);
-            }
 
             // <field>
             List<Field> fields = xmlData.getFieldList();
 
             // get SQL data
             List<Map<String, Object>> sqlData =
-                    getSqlData(String.format(SQL_SELECT_TABLE, tableName));
+                    getSqlData(tableName);
 
             // mask data
             dataMasker.maskData(sqlData, fields);
@@ -152,7 +148,14 @@ public class XmlToInsertGenerator {
         }
     }
 
-    private List<Map<String, Object>> getSqlData(String sql) {
+    private List<Map<String, Object>> getSqlData(String tableName) {
+        // 白名單驗證，防止SQL Injection
+        if (!AllowedTableName.contains(tableName)) {
+            throw new IllegalArgumentException("Invalid table name: " + tableName);
+        }
+
+        String sql = String.format(SQL_SELECT_TABLE, tableName);
+
         List<Map<String, Object>> result = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
                 PreparedStatement pstmt = connection.prepareStatement(sql);
