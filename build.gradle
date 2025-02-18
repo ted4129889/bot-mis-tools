@@ -121,7 +121,7 @@ allprojects {
 
     ext {
         set('snippetsDir', file("build/generated-snippets"))
-        set('springCloudVersion', "2023.0.3")
+        set('springCloudVersion', "2024.0.0")
     }
 
     java {
@@ -144,6 +144,8 @@ allprojects {
 
     configurations.all {
         exclude group: "commons-lang", module: "commons-lang"
+        exclude group: "org.latencyutils"
+        exclude group: "org.hdrhistogram"
     }
 
     dependencies {
@@ -166,7 +168,7 @@ allprojects {
 
         implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.5'
 
-        implementation 'net.i2p.crypto:eddsa:0.3.0'
+//        implementation 'net.i2p.crypto:eddsa:0.3.0'
         implementation "org.mapstruct:mapstruct:${mapStructVer}"
         implementation "com.google.protobuf:protobuf-java-util:${protobufVer}"
         implementation 'javax.annotation:javax.annotation-api:1.3.2'
