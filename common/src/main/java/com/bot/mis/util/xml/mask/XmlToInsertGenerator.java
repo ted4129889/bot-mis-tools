@@ -62,13 +62,11 @@ public class XmlToInsertGenerator {
             // <table>
             String tableName = xmlData.getTable().getTableName();
 
-
             // <field>
             List<Field> fields = xmlData.getFieldList();
 
             // get SQL data
-            List<Map<String, Object>> sqlData =
-                    getSqlData(tableName);
+            List<Map<String, Object>> sqlData = getSqlData(tableName);
 
             // mask data
             dataMasker.maskData(sqlData, fields);
