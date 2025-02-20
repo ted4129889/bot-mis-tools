@@ -1,6 +1,8 @@
 /* (C) 2025 */
 package com.bot.mis.util.comparator.common;
 
+import org.apache.commons.io.FilenameUtils;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -11,16 +13,33 @@ import java.util.stream.Collectors;
 
 public class FileUtil {
 
+    // 私有構造函數以防止實例化
+    private FileUtil() {
+        throw new UnsupportedOperationException("Utility class should not be instantiated");
+    }
+
     /** 讀取指定檔案內容 */
     public static String readFile(String filePath) throws IOException {
         return new String(Files.readAllBytes(Paths.get(filePath)));
     }
 
-    /** 取得檔案名稱 */
-    public static List<String> getListFiles(String filePath) {
-        File folder = new File(filePath);
+    public static List<String> getListFiles(String filePath) throws IOException {
+        File folder = new File(FilenameUtils.normalize(filePath));
+
+        // 檢查 folder 是否存在且是目錄
+        if (!folder.exists() || !folder.isDirectory()) {
+            throw new IllegalArgumentException("Invalid directory: " + filePath);
+        }
+
         // 取得檔案清單
-        return Arrays.stream(folder.listFiles())
+        File[] files = folder.listFiles();
+
+        // 檢查 listFiles() 是否返回 null
+        if (files == null) {
+            throw new IOException("Unable to list files in directory: " + filePath);
+        }
+
+        return Arrays.stream(files)
                 .filter(File::isFile)
                 .map(File::getName)
                 .collect(Collectors.toList());
