@@ -1,8 +1,6 @@
 /* (C) 2025 */
 package com.bot.mis.util.comparator.common;
 
-import org.apache.commons.io.FilenameUtils;
-
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -10,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.apache.commons.io.FilenameUtils;
 
 public class FileUtil {
 

@@ -6,9 +6,7 @@ import com.bot.mis.util.xml.mask.xmltag.Field;
 import com.bot.mis.util.xml.vo.XmlBody;
 import com.bot.mis.util.xml.vo.XmlField;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class SplitData {
@@ -25,35 +23,36 @@ public class SplitData {
             List<Map<String, List<Field>>> maskXmlList,
             XmlBody outputXmlBody,
             String dataType) {
+
         List<DataRecord> dataList = new ArrayList<>();
         List<XmlField> outputFieldList = outputXmlBody.getFieldList();
-
         int totalLength = getTotalLength(outputFieldList);
 
-        try (BufferedReader br = new BufferedReader(new FileReader(newFileName))) {
+        // 使用 try-with-resources 避免流過早關閉
+        try (BufferedReader br = createBufferedReader(newFileName)) {
             String line;
             int lineNumber = 1;
 
             while ((line = br.readLine()) != null) {
                 if (line.length() != totalLength) {
                     throw new IllegalArgumentException(
-                            "File: "
-                                    + newFileName
-                                    + ", Line: "
-                                    + lineNumber
-                                    + " - Length error. Expected: "
-                                    + totalLength
-                                    + ", Actual: "
-                                    + line.length());
+                            String.format(
+                                    "File: %s, Line: %d - Length error. Expected: %d, Actual: %d",
+                                    newFileName, lineNumber, totalLength, line.length()));
                 }
                 dataList.add(createDataRecord(line, outputFieldList, dataType, maskXmlList));
                 lineNumber++;
             }
         } catch (IOException e) {
-            throw new RuntimeException("Error reading file: " + e.getMessage(), e);
+            throw new RuntimeException(
+                    "Error reading file: " + newFileName + " - " + e.getMessage(), e);
         }
 
         return convertToJson(dataList);
+    }
+
+    private BufferedReader createBufferedReader(String filePath) throws IOException {
+        return new BufferedReader(new FileReader(filePath));
     }
 
     private int getTotalLength(List<XmlField> outputFieldList) {
@@ -73,6 +72,7 @@ public class SplitData {
             List<XmlField> outputFieldList,
             String dataType,
             List<Map<String, List<Field>>> maskXmlList) {
+
         DataRecord record = new DataRecord();
         int startIndex = 0;
         Map<String, Map<String, String>> maskMap = buildMaskMap(maskXmlList);
@@ -105,7 +105,6 @@ public class SplitData {
                 maskMap.put(entry.getKey(), fieldMap);
             }
         }
-
         return maskMap;
     }
 
@@ -115,7 +114,6 @@ public class SplitData {
         if (fields != null && fields.containsKey(xmlField.getOFieldName())) {
             return dataMasker.applyMask(fieldValue, fields.get(xmlField.getOFieldName()));
         }
-
         return fieldValue;
     }
 

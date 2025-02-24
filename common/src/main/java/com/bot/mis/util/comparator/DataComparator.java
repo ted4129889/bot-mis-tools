@@ -9,12 +9,20 @@ import com.bot.mis.util.xml.mask.XmlParser;
 import com.bot.mis.util.xml.mask.xmltag.Field;
 import com.bot.mis.util.xml.vo.XmlBody;
 import com.bot.mis.util.xml.vo.XmlData;
+import com.bot.txcontrol.config.logger.ApLogHelper;
+import com.bot.txcontrol.eum.LogType;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.util.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Slf4j
+@Component
+@Scope("prototype")
 public class DataComparator {
 
     @Value("${localFile.mis.xml.mask.directory}")
@@ -26,7 +34,6 @@ public class DataComparator {
     private static final String OLD_DATA_TYPE = "O";
     private static final String NEW_DATA_TYPE = "N";
 
-    private final XmlParser xmlParser = new XmlParser();
     private final DataMasker dataMasker = new DataMasker();
 
     public void executeCompare(String newTxtPath, String oldTxtPath) throws IOException {
@@ -39,59 +46,84 @@ public class DataComparator {
 
         // new Data
         parseAndInsert(NEW_DATA_TYPE, newFileNameList, splitData, maskXmlList);
+        ApLogHelper.info(log, false, LogType.NORMAL.getCode(), "insert new data success.");
 
         // old Data
         parseAndInsert(OLD_DATA_TYPE, oldFileNameList, splitData, maskXmlList);
+        ApLogHelper.info(log, false, LogType.NORMAL.getCode(), "insert old data success.");
 
         // compare and output CSV
-        compareAndOutputCSV(newFileNameList);
+        //        compareAndOutputCSV(newFileNameList);
     }
 
     private void compareAndOutputCSV(List<String> fileNameList) {
         for (String fileName : fileNameList) {
-            try (PrintWriter writer =
-                    new PrintWriter(new FileWriter(fileName + "_Comparison.csv"))) {
-                writer.println("Field,New Value,Old Value");
+            try {
+                // 執行比較
+                List<String> diffLines = compareData(fileName);
 
-                Map<String, String> newDataMap = DatabaseUtil.getData(fileName, NEW_DATA_TYPE);
-                Map<String, String> oldDataMap = DatabaseUtil.getData(fileName, OLD_DATA_TYPE);
+                // 輸出 CSV 檔案
+                outputCsv(fileName, diffLines);
 
-                if (newDataMap == null || oldDataMap == null) {
-                    throw new RuntimeException("未找到符合條件的數據: " + fileName);
-                }
-
-                String dataKey = newDataMap.get("DATA_KEY");
-                if (dataKey == null || dataKey.isEmpty()) {
-                    throw new RuntimeException("未找到 dataKey: " + fileName);
-                }
-
-                List<Map<String, Object>> newDataList =
-                        parseJsonToList(newDataMap.get("DATA_VALUE"));
-                List<Map<String, Object>> oldDataList =
-                        parseJsonToList(oldDataMap.get("DATA_VALUE"));
-                Map<Object, Map<String, Object>> oldDataIndex = buildIndex(oldDataList, dataKey);
-
-                for (Map<String, Object> newRecord : newDataList) {
-                    Object keyValue = newRecord.get(dataKey);
-                    if (keyValue == null) continue;
-                    Map<String, Object> oldRecord = oldDataIndex.get(keyValue);
-                    if (oldRecord == null) continue;
-
-                    for (String fieldName : newRecord.keySet()) {
-                        Object newValue = newRecord.get(fieldName);
-                        Object oldValue = oldRecord.get(fieldName);
-                        if (!Objects.equals(newValue, oldValue)) {
-                            writer.printf(
-                                    "%s,%s,%s%n",
-                                    fieldName,
-                                    newValue != null ? newValue.toString() : "",
-                                    oldValue != null ? oldValue.toString() : "");
-                        }
-                    }
-                }
             } catch (Exception e) {
                 System.err.println("處理檔案 " + fileName + " 時發生錯誤: " + e.getMessage());
             }
+        }
+    }
+
+    private List<String> compareData(String fileName) {
+        List<String> diffLines = new ArrayList<>();
+
+        Map<String, String> newDataMap = DatabaseUtil.getData(fileName, NEW_DATA_TYPE);
+        Map<String, String> oldDataMap = DatabaseUtil.getData(fileName, OLD_DATA_TYPE);
+
+        if (newDataMap == null || oldDataMap == null) {
+            throw new RuntimeException("未找到符合條件的數據: " + fileName);
+        }
+
+        String dataKey = newDataMap.get("DATA_KEY");
+        if (dataKey == null || dataKey.isEmpty()) {
+            throw new RuntimeException("未找到 dataKey: " + fileName);
+        }
+
+        List<Map<String, Object>> newDataList = parseJsonToList(newDataMap.get("DATA_VALUE"));
+        List<Map<String, Object>> oldDataList = parseJsonToList(oldDataMap.get("DATA_VALUE"));
+        Map<Object, Map<String, Object>> oldDataIndex = buildIndex(oldDataList, dataKey);
+
+        for (Map<String, Object> newRecord : newDataList) {
+            Object keyValue = newRecord.get(dataKey);
+            if (keyValue == null) continue;
+            Map<String, Object> oldRecord = oldDataIndex.get(keyValue);
+            if (oldRecord == null) continue;
+
+            for (String fieldName : newRecord.keySet()) {
+                Object newValue = newRecord.get(fieldName);
+                Object oldValue = oldRecord.get(fieldName);
+                if (!Objects.equals(newValue, oldValue)) {
+                    String diffLine =
+                            String.format(
+                                    "%s,%s,%s",
+                                    fieldName,
+                                    newValue != null ? newValue.toString() : "",
+                                    oldValue != null ? oldValue.toString() : "");
+                    diffLines.add(diffLine);
+                }
+            }
+        }
+
+        return diffLines;
+    }
+
+    private void outputCsv(String fileName, List<String> diffLines) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName + "_Comparison.csv"))) {
+            writer.println("Field,New Value,Old Value");
+
+            for (String diffLine : diffLines) {
+                writer.println(diffLine);
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException("輸出 CSV 檔案時發生錯誤: " + e.getMessage());
         }
     }
 
@@ -146,6 +178,7 @@ public class DataComparator {
             List<Map<String, List<Field>>> maskXmlList) {
         try {
             for (String fileName : fileNameList) {
+                XmlParser xmlParser = new XmlParser();
                 XmlBody outputXmlBody = xmlParser.parseXmlFile(fileName).getBody();
                 String dataKey = outputXmlBody.getDataKey();
                 String tempJson =
@@ -160,6 +193,7 @@ public class DataComparator {
     private List<Map<String, List<Field>>> getMaskXmlTableNameAndFieldList(String maskXmlPath)
             throws IOException {
         List<Map<String, List<Field>>> maskXmlList = new ArrayList<>();
+        XmlParser xmlParser = new XmlParser();
 
         for (String maskXmlName : FileUtil.getListFiles(maskXmlPath)) {
             String xmlFilePath =
