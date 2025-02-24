@@ -61,7 +61,7 @@ astar:
   binPath: "astar/" 
  
 apiNodes: > 
-  apiNode_MaskApi.yml
+  apiNode_MaskApi.yml,
   apiNode_CompareApi.yml
 
 xmlPath: "external-config/xml/"
