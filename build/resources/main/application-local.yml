@@ -67,6 +67,7 @@ apiNodes: >
 xmlPath: "external-config/xml/"
 batchFilePath: "batch-file/"
 idConvertFile: "IdConvert.yml"
+comparePath: "external-config/compare/"
 
 localFile:
   mis: 
@@ -83,6 +84,11 @@ localFile:
       mask: 
         directory: "${xmlPath}mask/"
         convert: "${xmlPath}mask/convert/"
+    compare:
+      new:
+        directory: "${comparePath}new/"
+      old:
+        directory: "${comparePath}old/"
 
 externalSort:
   blockSize: 100000
