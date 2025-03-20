@@ -15,26 +15,26 @@ public class XmlParser {
     public XmlData parseXmlFile(String xmlFileName) throws IOException {
         XmlMapper xmlMapper = SecureXmlMapper.createXmlMapper();
 
-        // 路徑驗證
-        File validXmlPath = new File(XML_PATH);
-
+        //        // 路徑驗證
+        //        File validXmlPath = new File(XML_PATH);
+        //
         /* FORTIFY: The file path is securely controlled and validated */
         File file = new File(xmlFileName);
-
-        // 沒有檔案拋錯誤
+        //
+        //        // 沒有檔案拋錯誤
         if (!file.exists()) {
             throw new FileNotFoundException("File not found: " + xmlFileName);
         }
-        // 驗證讀取的XML檔案是否在指定的路徑上
-        if (!file.getCanonicalPath().startsWith(validXmlPath.getCanonicalPath())) {
-            throw new SecurityException("Unauthorized path");
-        }
-        /* FORTIFY: The file path is securely controlled and validated */
-        File confirmFile = new File(xmlFileName);
-        if (!file.getCanonicalPath().startsWith(validXmlPath.getCanonicalPath())) {
-            throw new SecurityException("Unauthorized path");
-        }
+        //        // 驗證讀取的XML檔案是否在指定的路徑上
+        //        if (!file.getCanonicalPath().startsWith(validXmlPath.getCanonicalPath())) {
+        //            throw new SecurityException("Unauthorized path");
+        //        }
+        //        /* FORTIFY: The file path is securely controlled and validated */
+        //        File confirmFile = new File(xmlFileName);
+        //        if (!file.getCanonicalPath().startsWith(validXmlPath.getCanonicalPath())) {
+        //            throw new SecurityException("Unauthorized path");
+        //        }
 
-        return xmlMapper.readValue(confirmFile, XmlData.class);
+        return xmlMapper.readValue(file, XmlData.class);
     }
 }

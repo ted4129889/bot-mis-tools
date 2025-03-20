@@ -48,7 +48,7 @@
             <fieldName>ID_unMask</fieldName>
             <fieldType>string</fieldType>
             <format></format>
-            <length>1</length>
+            <length>10</length>
             <align>left</align>
             <oTableName></oTableName>
             <oFieldName></oFieldName>

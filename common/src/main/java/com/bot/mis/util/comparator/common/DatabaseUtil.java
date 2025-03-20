@@ -8,12 +8,16 @@ import java.util.Map;
 import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DatabaseUtil {
     private static DataSource dataSource;
     private static final Logger log = LoggerFactory.getLogger(DatabaseUtil.class);
 
-    public static void setDataSource(DataSource dataSource) {
+    @Autowired
+    public DatabaseUtil(DataSource dataSource) {
         DatabaseUtil.dataSource = dataSource;
     }
 
@@ -29,7 +33,7 @@ public class DatabaseUtil {
         checkKeyAndData(dataKey, json);
 
         String sql =
-                "INSERT INTO MISBHDB.DATACOMPARISON (FILE_NAME, TYPE, DATA_KEY, DATA_VALUE) VALUES"
+                "INSERT INTO MISBHDB.DATA_COMPARISON (FILENAME, TYPE, DATA_KEY, VALUE) VALUES"
                         + " (?, ?, ?, ?)";
 
         try (Connection conn = dataSource.getConnection();
@@ -69,7 +73,7 @@ public class DatabaseUtil {
      */
     public static Map<String, String> getData(String fileName, String dataType) {
         String sql =
-                "SELECT DATA_KEY, DATA_VALUE FROM MISBHDB.DATACOMPARISON WHERE FILE_NAME = ? AND"
+                "SELECT DATA_KEY, VALUE FROM MISBHDB.DATA_COMPARISON WHERE FILENAME = ? AND"
                         + " TYPE = ?";
         Map<String, String> dataMap = null;
 
@@ -85,11 +89,11 @@ public class DatabaseUtil {
                     dataMap.put("DATA_KEY", rs.getString("DATA_KEY"));
 
                     // 處理 DATA_VALUE 是 CLOB 的情況
-                    if (rs.getObject("DATA_VALUE") instanceof Clob) {
-                        Clob clob = rs.getClob("DATA_VALUE");
-                        dataMap.put("DATA_VALUE", convertClobToString(clob));
+                    if (rs.getObject("VALUE") instanceof Clob) {
+                        Clob clob = rs.getClob("VALUE");
+                        dataMap.put("VALUE", convertClobToString(clob));
                     } else {
-                        dataMap.put("DATA_VALUE", rs.getString("DATA_VALUE"));
+                        dataMap.put("VALUE", rs.getString("VALUE"));
                     }
                 }
             }

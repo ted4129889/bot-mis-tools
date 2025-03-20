@@ -4,6 +4,7 @@ package com.bot.mis.util.comparator;
 import com.bot.mis.util.comparator.common.DatabaseUtil;
 import com.bot.mis.util.comparator.common.FileUtil;
 import com.bot.mis.util.comparator.common.SplitData;
+import com.bot.mis.util.xml.config.SecureXmlMapper;
 import com.bot.mis.util.xml.mask.DataMasker;
 import com.bot.mis.util.xml.mask.XmlParser;
 import com.bot.mis.util.xml.mask.xmltag.Field;
@@ -13,10 +14,11 @@ import com.bot.txcontrol.config.logger.ApLogHelper;
 import com.bot.txcontrol.eum.LogType;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.io.*;
 import java.util.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -25,35 +27,36 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class DataComparator {
 
-    @Value("${localFile.mis.xml.mask.directory}")
-    private String maskXmlFilePath;
-
-    @Value("${localFile.mis.xml.output.directory}")
-    private String outputXmlFilePath;
-
     private static final String OLD_DATA_TYPE = "O";
     private static final String NEW_DATA_TYPE = "N";
 
-    private final DataMasker dataMasker = new DataMasker();
+    @Autowired private DataMasker dataMasker;
+    @Autowired private SplitData splitData;
 
-    public void executeCompare(String newTxtPath, String oldTxtPath) throws IOException {
+    public void executeCompare(
+            String newTxtPath, String oldTxtPath, String maskXmlFilePath, String outputFilePath)
+            throws IOException {
         List<String> newFileNameList = FileUtil.getListFiles(newTxtPath);
         List<String> oldFileNameList = FileUtil.getListFiles(oldTxtPath);
         List<Map<String, List<Field>>> maskXmlList =
                 getMaskXmlTableNameAndFieldList(maskXmlFilePath);
 
-        SplitData splitData = new SplitData(dataMasker);
-
         // new Data
-        parseAndInsert(NEW_DATA_TYPE, newFileNameList, splitData, maskXmlList);
+        /*
+        parseAndInsert(
+                NEW_DATA_TYPE, newFileNameList, splitData, maskXmlList, outputFilePath, newTxtPath);
         ApLogHelper.info(log, false, LogType.NORMAL.getCode(), "insert new data success.");
 
         // old Data
-        parseAndInsert(OLD_DATA_TYPE, oldFileNameList, splitData, maskXmlList);
+        parseAndInsert(
+                OLD_DATA_TYPE, oldFileNameList, splitData, maskXmlList, outputFilePath, oldTxtPath);
         ApLogHelper.info(log, false, LogType.NORMAL.getCode(), "insert old data success.");
+         */
 
         // compare and output CSV
-        //        compareAndOutputCSV(newFileNameList);
+//                compareAndOutputCSV(newFileNameList);
+
+
     }
 
     private void compareAndOutputCSV(List<String> fileNameList) {
@@ -71,6 +74,61 @@ public class DataComparator {
         }
     }
 
+
+    /**
+     *
+     */
+    private Map<String, List<String>> compare(String fileName) {
+        List<String> diffLines = new ArrayList<>();
+        List<String> sameLines = new ArrayList<>();
+
+        Map<String, String> newDataMap = DatabaseUtil.getData(fileName, NEW_DATA_TYPE);
+        Map<String, String> oldDataMap = DatabaseUtil.getData(fileName, OLD_DATA_TYPE);
+
+        if (newDataMap == null || oldDataMap == null) {
+            throw new RuntimeException("未找到符合條件的數據: " + fileName);
+        }
+
+        String dataKey = newDataMap.get("DATA_KEY");
+        if (dataKey == null || dataKey.isEmpty()) {
+            throw new RuntimeException("未找到 dataKey: " + fileName);
+        }
+
+        List<Map<String, Object>> newDataList = parseJsonToList(newDataMap.get("VALUE"));
+        List<Map<String, Object>> oldDataList = parseJsonToList(oldDataMap.get("VALUE"));
+        Map<Object, Map<String, Object>> oldDataIndex = buildIndex(oldDataList, dataKey);
+
+        for (Map<String, Object> newRecord : newDataList) {
+            Object keyValue = newRecord.get(dataKey);
+            if (keyValue == null) continue;
+            Map<String, Object> oldRecord = oldDataIndex.get(keyValue);
+            if (oldRecord == null) continue;
+
+            for (String fieldName : newRecord.keySet()) {
+                Object newValue = newRecord.get(fieldName);
+                Object oldValue = oldRecord.get(fieldName);
+                String line = String.format(
+                        "%s,%s,%s",
+                        fieldName,
+                        newValue != null ? newValue.toString() : "",
+                        oldValue != null ? oldValue.toString() : ""
+                );
+
+                if (!Objects.equals(newValue, oldValue)) {
+                    diffLines.add(line); // 不一樣的
+                } else {
+                    sameLines.add(line); // 一樣的
+                }
+            }
+        }
+
+        Map<String, List<String>> result = new HashMap<>();
+        result.put("different", diffLines);
+        result.put("same", sameLines);
+        return result;
+    }
+
+
     private List<String> compareData(String fileName) {
         List<String> diffLines = new ArrayList<>();
 
@@ -86,8 +144,8 @@ public class DataComparator {
             throw new RuntimeException("未找到 dataKey: " + fileName);
         }
 
-        List<Map<String, Object>> newDataList = parseJsonToList(newDataMap.get("DATA_VALUE"));
-        List<Map<String, Object>> oldDataList = parseJsonToList(oldDataMap.get("DATA_VALUE"));
+        List<Map<String, Object>> newDataList = parseJsonToList(newDataMap.get("VALUE"));
+        List<Map<String, Object>> oldDataList = parseJsonToList(oldDataMap.get("VALUE"));
         Map<Object, Map<String, Object>> oldDataIndex = buildIndex(oldDataList, dataKey);
 
         for (Map<String, Object> newRecord : newDataList) {
@@ -175,19 +233,32 @@ public class DataComparator {
             String dataType,
             List<String> fileNameList,
             SplitData splitData,
-            List<Map<String, List<Field>>> maskXmlList) {
+            List<Map<String, List<Field>>> maskXmlList,
+            String outputFilePath,
+            String txtFilePath) {
         try {
             for (String fileName : fileNameList) {
                 XmlParser xmlParser = new XmlParser();
-                XmlBody outputXmlBody = xmlParser.parseXmlFile(fileName).getBody();
+                String replaceXmlFileName = outputFilePath + fileName.replace(".txt", "") + ".xml";
+                XmlBody outputXmlBody = xmlParser.parseXmlFile(replaceXmlFileName).getBody();
+                //                XmlBody outputXmlBody = getOutputXmlBody(fileName);
                 String dataKey = outputXmlBody.getDataKey();
+                String replaceTxtFileName = txtFilePath + fileName;
                 String tempJson =
-                        splitData.parseDataToJson(fileName, maskXmlList, outputXmlBody, dataType);
+                        splitData.parseDataToJson(
+                                replaceTxtFileName, maskXmlList, outputXmlBody, dataType);
                 DatabaseUtil.insertData(fileName, dataType, dataKey, tempJson);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private XmlBody getOutputXmlBody(String fileName) throws IOException {
+        XmlMapper xmlMapper = SecureXmlMapper.createXmlMapper();
+        File file = new File(fileName);
+        XmlData xmlData = xmlMapper.readValue(file, XmlData.class);
+        return xmlData.getBody();
     }
 
     private List<Map<String, List<Field>>> getMaskXmlTableNameAndFieldList(String maskXmlPath)

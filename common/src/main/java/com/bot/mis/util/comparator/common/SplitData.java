@@ -8,12 +8,17 @@ import com.bot.mis.util.xml.vo.XmlField;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SplitData {
 
-    private static final String OLD_DATA_TYPE = "o";
+    private static final String OLD_DATA_TYPE = "O";
+    private static final String prefix = "mis.";
     private final DataMasker dataMasker;
 
+    @Autowired
     public SplitData(DataMasker dataMasker) {
         this.dataMasker = dataMasker;
     }
@@ -102,7 +107,13 @@ public class SplitData {
                 for (Field field : entry.getValue()) {
                     fieldMap.put(field.getFieldName(), field.getMaskType());
                 }
-                maskMap.put(entry.getKey(), fieldMap);
+
+                String key = entry.getKey();
+                if (key.endsWith(".xml")) {
+                    key = key.substring(0, key.length() - 4);
+                }
+
+                maskMap.put(key, fieldMap);
             }
         }
         return maskMap;
@@ -110,7 +121,13 @@ public class SplitData {
 
     private String applyMaskOldData(
             XmlField xmlField, String fieldValue, Map<String, Map<String, String>> maskMap) {
-        Map<String, String> fields = maskMap.get(xmlField.getOTableName());
+        String oTableName = xmlField.getOTableName();
+
+        if (oTableName.startsWith(prefix)) {
+            oTableName = oTableName.substring(prefix.length());
+        }
+
+        Map<String, String> fields = maskMap.get(oTableName);
         if (fields != null && fields.containsKey(xmlField.getOFieldName())) {
             return dataMasker.applyMask(fieldValue, fields.get(xmlField.getOFieldName()));
         }
