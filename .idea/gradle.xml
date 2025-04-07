@@ -10,6 +10,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/apiin" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/compareapi" />
+            <option value="$PROJECT_DIR$/compareservice" />
             <option value="$PROJECT_DIR$/dbs_nativeQuery" />
             <option value="$PROJECT_DIR$/maskapi" />
             <option value="$PROJECT_DIR$/maskservice" />

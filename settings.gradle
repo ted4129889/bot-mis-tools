@@ -10,7 +10,7 @@ pluginManagement {
         id "com.diffplug.spotless" version "6.20.0"
     }
 }
-rootProject.name = 'mis'
+rootProject.name = 'mis-compare'
 //COMMON
 include 'common'
 
